@@ -1,3 +1,5 @@
+Soccer Game Simulation
+
 A simple turn-based soccer match simulator built in Java using Swing for the user interface.
 Two teams take turns attacking, and goals are determined using each player's speed, shooting, and stamina stats combined with randomness.
 
@@ -9,3 +11,4 @@ The following features are planned to be implemented:
 - Audio cues for key events (goal scored, missed shot, kickoff, final whistle).
 - Stamina drain
 - Visual polish for GUI
+

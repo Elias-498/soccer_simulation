@@ -7,8 +7,10 @@ This project demonstrates basic object-oriented project design, GUI programming,
 
 The following features are planned to be implemented:
 - Goalkeeper stat and save mechanic, so not every high shooting roll becomes a goal.
+- More player stats (such as defense, heading, composure ,and so on)
 - Additional events such as fouls, assists, passes, dribbles, and defensive actions to make commentary more varied and realistic.
 - Audio cues for key events (goal scored, missed shot, kickoff, final whistle).
 - Stamina drain
 - Visual polish for GUI
+
 

@@ -1,22 +1,11 @@
-<<<<<<< HEAD
-## Getting Started
+A simple turn-based soccer match simulator built in Java using Swing for the user interface.
+Two teams take turns attacking, and goals are determined using each player's speed, shooting, and stamina stats combined with randomness.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project demonstrates basic object-oriented project design, GUI programming, and simple probability-based game mechanics.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-=======
-# soccer_simulation
->>>>>>> 69067b7de8c0975d0c95ada1ee50b748fbfcec3c
+The following features are planned to be implemented:
+- Goalkeeper stat and save mechanic, so not every high shooting roll becomes a goal.
+- Additional events such as fouls, assists, passes, dribbles, and defensive actions to make commentary more varied and realistic.
+- Audio cues for key events (goal scored, missed shot, kickoff, final whistle).
+- Stamina drain
+- Visual polish for GUI

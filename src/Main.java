@@ -17,7 +17,7 @@ public class Main {
         team2.addPlayer(new Player("Enzo", 75, 60, 88));
         team2.addPlayer(new Player("Colwill", 70, 5, 80));
         
-        Game game = new Game(team1, team2);
+        //Game game = new Game(team1, team2);
 
         //GUI
 
@@ -44,10 +44,12 @@ public class Main {
         playButton.addActionListener(new ActionListener() {
             
             public void actionPerformed(ActionEvent e){
-                
                 textArea.setText("");
 
-                int turns = 5;
+                // start  0-0
+                Game game = new Game(team1, team2);
+
+                int turns = 10;
                 for(int i = 0; i < turns; i++){
                    textArea.append("Turn " + (i+1) + ":\n");
                    game.turn(textArea);

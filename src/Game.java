@@ -26,58 +26,59 @@ public class Game {
     }
 
     /**
-     * Simulates one attacking possession.
-     * Which team attacks is 50/50 chance
-     * A random player is chosen to shoot, if it is a goal or not is determeined by their shooting stat and randomness
+     * Simulates one attacking possession in the console.
      */
-    public void turn(){
-
-        boolean team_1_offence = rand.nextBoolean();
-        Team offenceTeam = team_1_offence ? team1 : team2;
-        //Team defenceTeam = team_1_offence ? team2 : team1;  can be used if am using defence stats for later
-
-        // randomly picking attacking player
-        Player offence = offenceTeam.getPlayers().get(rand.nextInt(offenceTeam.getPlayers().size()));
-
-        // calculating chance of scoring 
-        int chanceOfGoal = offence.getShooting() + rand.nextInt(100);
-
-        if (chanceOfGoal > 100) {
-            if (team_1_offence){
-                score1++;
-            }
-            else{
-                score2++;
-                System.out.println(offence.getName() + "scored for " + offenceTeam.getName());
-            }
-        
-        } else {
-            System.out.println(offence.getName() + "missed the shot");
-        }
+    public void turn() {
+        System.out.print(simulateTurn());
     }
 
     /**
-     * Plays the game in given amount of turns
-     * @param turns- represents the number of offense to simulate
+     * Simulates one attacking possession and writes the result to the GUI.
+     *
+     * @param textArea the text area used to display the turn result
      */
-    public void playGame(int turns){
-        for (int i = 0 ; i < turns ; i++){
+    public void turn(JTextArea textArea) {
+        textArea.append(simulateTurn());
+    }
+
+    private String simulateTurn() {
+        boolean team1Offence = rand.nextBoolean();
+        Team offenceTeam = team1Offence ? team1 : team2;
+
+        Player offence = offenceTeam.getPlayers().get(rand.nextInt(offenceTeam.getPlayers().size()));
+        int chanceOfGoal = offence.getShooting() + rand.nextInt(100);
+
+        if (chanceOfGoal > 100) {
+            if (team1Offence) {
+                score1++;
+            } else {
+                score2++;
+            }
+
+            return offence.getName() + " scored for " + offenceTeam.getName() + "\n";
+        }
+
+        return offence.getName() + " missed the shot\n";
+    }
+
+    /**
+     * Plays the game for the given number of turns in the console.
+     *
+     * @param turns the number of attacking possessions to simulate
+     */
+    public void playGame(int turns) {
+        for (int i = 0; i < turns; i++) {
             turn();
         }
 
         System.out.println("Final score: " + team1.getName() + " " + score1 + "-" + score2 + " " + team2.getName());
     }
 
-}
+    public int getScore1() {
+        return score1;
+    }
 
-
-
-
-
-
-
-
-
-
-
+    public int getScore2() {
+        return score2;
+    }
 }

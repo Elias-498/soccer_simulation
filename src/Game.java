@@ -1,10 +1,10 @@
 import java.util.*;
+import javax.swing.JTextArea;
 
 /**
  * Represents a game played between two teams(team1 vs team2)
  * Game is played in turns
  * player shot determines if a goal is scored or not, using players shooting stat and randomness
- * @param turns
  */
 public class Game {
     
